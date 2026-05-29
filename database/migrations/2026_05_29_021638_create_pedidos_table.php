@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->json('contenido'); // Guardará el arreglo de productos del carrito
+            $table->decimal('total', 10, 2); // Precio total general de la compra
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
